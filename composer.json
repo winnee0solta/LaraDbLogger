@@ -1,0 +1,19 @@
+{
+    "name": "winnee0solta/laradblogger",
+    "description": "Laravel database error logger",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Winnee0solta\\Laradblogger\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "winnee0solta",
+            "email": "winneecreztha@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
