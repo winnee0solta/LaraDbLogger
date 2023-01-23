@@ -4,7 +4,6 @@ namespace winnee0solta\Laradblogger;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Exceptions\Handler;
 
 class LaradbloggerServiceProvider extends ServiceProvider
 {
