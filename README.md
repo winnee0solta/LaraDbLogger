@@ -29,7 +29,7 @@ php artisan vendor:publish --tag="laradblogger-config"
 You can start logging errors to the database via try-catch block: 
 
 ```php
-use winnee0solta\Laradblogger\LaradbloggerErrorHandler;
+use Winnee0solta\Laradblogger\LaradbloggerErrorHandler;
 
 try {
     // code that may throw an exception
