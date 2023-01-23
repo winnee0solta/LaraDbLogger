@@ -1,6 +1,6 @@
 <?php
 
-namespace Winnee0solta\Laradblogger\Models;
+namespace winnee0solta\Laradblogger\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

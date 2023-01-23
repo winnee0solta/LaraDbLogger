@@ -1,8 +1,6 @@
 <?php
 
-namespace Winnee0solta\Laradblogger;
-
-use Exception;
+namespace winnee0solta\Laradblogger;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use winnee0solta\Laradblogger\Models\LaraDbLogger;
