@@ -1,6 +1,6 @@
 <?php
 
-namespace Winnee0solta\Laradblogger;
+namespace winnee0solta\Laradblogger;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
@@ -18,7 +18,6 @@ class LaradbloggerServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ExceptionHandler::class, LaradbloggerErrorHandler::class);
     }
-
 
     protected function registerConfigs()
     {
