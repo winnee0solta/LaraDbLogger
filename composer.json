@@ -1,32 +1,29 @@
 {
-    "name": "winnee0solta/laradblogger",
-    "description": " Laravel Database Error Logger ( Crash Analytics )",
-    "type": "library",
-    "license": "MIT",
-    "homepage": "https://github.com/winnee0solta/LaraDbLogger",
-    "authors": [
-        {
-            "name": "winnee0solta",
-            "email": "winneecreztha@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.6"
-    },
-    "autoload": {
-        "psr-4": {
-            "Winnee0solta\\Laradblogger\\": "src"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Winnee0solta\\Laradblogger\\LaradbloggerServiceProvider"
-            ],
-            "aliases": {
-                "LaradbloggerErrorHandler": "Winnee0solta\\Laradblogger\\LaradbloggerErrorHandler"
-            }
-        }
+  "name": "winnee0solta/laradblogger",
+  "description": " Laravel Database Error Logger ( Crash Analytics )",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/winnee0solta/LaraDbLogger",
+  "authors": [
+    {
+      "name": "winnee0solta",
+      "email": "winneecreztha@gmail.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Winnee0solta\\Laradblogger\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Winnee0solta\\Laradblogger\\LaradbloggerServiceProvider"
+      ]
+    }
+  }
 }
