@@ -1,6 +1,6 @@
 <?php
 
-namespace winnee0solta\Laradblogger;
+namespace Winnee0solta\Laradblogger;
 
 use Exception;
 

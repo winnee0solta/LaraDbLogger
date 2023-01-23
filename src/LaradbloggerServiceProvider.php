@@ -1,6 +1,6 @@
 <?php
 
-namespace winnee0solta\Laradblogger;
+namespace Winnee0solta\Laradblogger;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
@@ -12,7 +12,6 @@ class LaradbloggerServiceProvider extends ServiceProvider
     {
         $this->registerConfigs();
         $this->registerMigrations();
-        // $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
 
     public function register()
