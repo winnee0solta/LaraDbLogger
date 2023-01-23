@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "\\Winnee0solta\\Laradblogger\\LaradbloggerServiceProvider"
+                "Winnee0solta\\Laradblogger\\LaradbloggerServiceProvider"
             ],
             "aliases": {
                 "LaradbloggerErrorHandler": "Winnee0solta\\Laradblogger\\LaradbloggerErrorHandler"
