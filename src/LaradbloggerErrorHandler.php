@@ -2,13 +2,38 @@
 
 namespace Winnee0solta\Laradblogger;
 
-use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Winnee0solta\Laradblogger\Models\LaraDbLogger;
+use Throwable;
 
-class LaradbloggerErrorHandler implements ExceptionHandler
+class LaradbloggerErrorHandler extends ExceptionHandler
 {
-    public function report($exception)
+    public function report(Throwable  $exception)
     {
+        $this->storeInDatabase($exception);
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        $this->storeInDatabase($exception);
+        return parent::render($request, $exception);
+    }
+
+    public function renderForConsole($output, Throwable $exception)
+    {
+        $this->storeInDatabase($exception);
+        parent::renderForConsole($output, $exception);
+    }
+
+    public function shouldReport(Throwable $exception)
+    {
+        $this->storeInDatabase($exception);
+        return parent::shouldReport($exception);
+    }
+
+    public function storeInDatabase($exception)
+    {
+        //--TODO: Check if table exists
         $error = new LaraDbLogger();
         $error->message = $exception->getMessage();
         $error->trace = $exception->getTraceAsString();
@@ -23,19 +48,5 @@ class LaradbloggerErrorHandler implements ExceptionHandler
         $error->user_id = auth()->id();
         $error->input = json_encode(request()->all());
         $error->save();
-    }
-
-    public function shouldReport($e)
-    {
-        // Your logic to determine if the exception should be reported
-    }
-
-    public function render($request, $e)
-    {
-        // Your logic to render the exception as a response
-    }
-
-    public function renderForConsole($output, $e)
-    {
     }
 }
