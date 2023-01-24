@@ -36,6 +36,7 @@ try {
 } catch (Exception $e) { 
 
     app(LaradbloggerErrorHandler::class)->report($e);
+    throw $e;
 }
 ```
 
