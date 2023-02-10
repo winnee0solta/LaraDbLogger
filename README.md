@@ -1,8 +1,7 @@
 # Laravel Database Error Logger ( Crash Analytics )
 
 This package provides exception handler which stores errors in the database.
-  
-  
+
 ## Installation
 
 You can install the package via composer:
@@ -21,25 +20,40 @@ php artisan migrate
 (Optionally) You can also publish config with:
 
 ```bash
-php artisan vendor:publish --tag="laradblogger-config" 
-```  
+php artisan vendor:publish --tag="laradblogger-config"
+```
+
+It creates the config file (config/lapsi.php)
 
 ## Usage
- 
-You can start logging errors to the database via try-catch block: 
+
+Logging exception to database with App/Exceptions/Handler.php: (Automatic)
+
+````php
+use Winnee0solta\Laradblogger\LaradbloggerErrorHandler;
+
+public function register()
+{
+    $this->reportable(function (Throwable $e) {
+    if (class_exists(LaradbloggerErrorHandler::class)) {
+            app(LaradbloggerErrorHandler::class)->report($e);
+        }
+    });
+}
+
+Logging exception to database via try-catch block: (Manual)
 
 ```php
 use Winnee0solta\Laradblogger\LaradbloggerErrorHandler;
 
 try {
     // code that may throw an exception
-} catch (Exception $e) { 
+} catch (Exception $e) {
 
     app(LaradbloggerErrorHandler::class)->report($e);
     throw $e;
 }
-```
-
+````
 
 ## Changelog
 
@@ -50,7 +64,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
- 
 
 ## License
 
