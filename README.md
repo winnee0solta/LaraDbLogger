@@ -40,6 +40,7 @@ public function register()
         }
     });
 }
+````
 
 Logging exception to database via try-catch block: (Manual)
 
